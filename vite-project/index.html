@@ -5,45 +5,53 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
-    <style>
-      .horizontal-container {
-        display: flex;
-        align-items: center;
-      }
-      .horizontal-container h3, .horizontal-container h4 {
-        margin: 0 10px; /* Adjust the margin as needed */
-      }
-    </style>
   </head>
   <body>
     <div class="horizontal-container">
-      <h3 id="locationName">場所のなまえaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</h3>
-      <h4 id="materialType">材料の種類aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</h4>
+      <h3 id="locationName">場所のなまえ</h3>
+      <h4 id="materialType">材料の種類</h4>
     </div>
-    <div class="item" style="background-image: url('./img/7R9A11611.jpg')"></div>
-    <div class="data-container">
-      <h4>amountData</h4>
-      <canvas id="bar-graph"></canvas>
+    <div class="slideshow-container">
+      <div class="item active" style="background-image: url('./img/7R9A11611.png')"></div>
+      <div class="item" style="background-image: url('./img/IMG_6413.jpg')"></div>
+      <div class="item" style="background-image: url('./img/20150201142613.jpg')"></div>
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
     </div>
-    <div class="monthData-container">
-      <h4>example</h4>
-      <canvas ></canvas>
+    <div class="container">
+      <h4 onclick="toggleContent(this)">amountData</h4>
+      <div class="content">
+        <canvas id="bar-graph"></canvas>
+      </div>
     </div>
-    <div class="Works">
-      <h4>過去のワーク</h4>
-      <canvas ></canvas>
+    <div class="container">
+      <h4 onclick="toggleContent(this)">example</h4>
+      <div class="content">
+        <canvas id="example-graph"></canvas>
+      </div>
     </div>
-    <div class="nodeEdit-container">
-      <h4>NodeEdit</h4>
-      <label>Amount(g)</label>
-      <input type="text" id="label" name="name" required minlength="4" maxlength="8" size="10" />
-      <label>Location Name</label>
-      <input type="text" id="label" name="name" required minlength="4" maxlength="8" size="10" />
-      <label>Material Type</label>
-      <input type="text" id="label" name="name" required minlength="4" maxlength="8" size="10" />
-      <label>Collection Image</label>
-      <input type="text" id="label" name="name" required minlength="4" maxlength="8" size="10" />
+    <div class="container">
+      <h4 onclick="toggleContent(this)">過去のワーク</h4>
+      <div class="content">
+        <canvas id="works-graph"></canvas>
+      </div>
     </div>
-    
+    <div class="container">
+      <h4 onclick="toggleContent(this)" class="nodeEdit-header">
+        NodeEdit
+        <button>Add!</button>
+      </h4>
+      <div class="content nodeEdit-container">
+        <label>Amount(g)</label>
+        <input type="text" id="amount" name="amount" required minlength="4" maxlength="8" size="10" />
+        <label>Location Name</label>
+        <input type="text" id="locationName" name="locationName" required minlength="4" maxlength="8" size="10" />
+        <label>Material Type</label>
+        <input type="text" id="materialType" name="materialType" required minlength="4" maxlength="8" size="10" />
+        <label>Collection Image</label>
+        <input type="text" id="collectionImage" name="collectionImage" required minlength="4" maxlength="8" size="10" />
+      </div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
   </body>
 </html>
